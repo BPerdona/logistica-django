@@ -1,11 +1,12 @@
 # Tutorial MDN Django
 
-O objetivo é desenvolver um sistema web para gerenciamento de pacientes e viagens para o setor de logistica da prefeitura de Canoinhas.
+**O objetivo é desenvolver um sistema web para gerenciamento de pacientes e viagens para o setor de logistica da prefeitura de Canoinhas.**
+
 Contendo os seguintes funcionamentos:
 
 - Cadastrar Pacientes;
 - Consultar Pacientes;
-- Criar viagens;
+- Cadastrar viagens;
 - Consultar Viagens.
 
 ## Requerimentos
