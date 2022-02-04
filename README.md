@@ -6,8 +6,14 @@ Contendo os seguintes funcionamentos:
 
 - Cadastrar Pacientes;
 - Consultar Pacientes;
+- Cadastrar Motorista;
+- Consultar Motorista;
 - Cadastrar viagens;
 - Consultar Viagens.
+
+## Diagrama de classe
+
+![diagram_de_classe](Diagrama_Classes)
 
 ## Requerimentos
 
