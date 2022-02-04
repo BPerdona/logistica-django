@@ -13,7 +13,7 @@ Contendo os seguintes funcionamentos:
 
 ## Diagrama de classe
 
-![diagram_de_classe](Diagrama_Classes)
+![diagram_de_classe](https://github.com/BPerdona/logistica-django/blob/main/Diagrama_Classes.png)
 
 ## Requerimentos
 
