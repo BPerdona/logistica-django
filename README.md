@@ -13,7 +13,19 @@ Contendo os seguintes funcionamentos:
 
 ## Diagrama de classe
 
-![diagram_de_classe](Diagrama_Classes)
+![diagram_de_classe](https://github.com/BPerdona/logistica-django/blob/main/Diagrama_Classes.png)
+
+## Objetivos para obtenção de nota
+
+- (1 ponto) 1. Crie um projeto do Django e implemente os modelos (models) do diagrama criado, definindo corretamente os relacionamentos;
+- (1 ponto) 2. Utilizando a extensão de templates do Django, crie um layout para sua aplicação web;
+- (1 ponto) 3. Crie uma página principal que apresente o número de registros gravados em cada um dos seus models;
+- (1 ponto) 4. Crie uma página que apresente uma lista dos registros do model principal do seu sistema;
+- (1 ponto) 5. Utilizando formulários, crie um CRUD (páginas de detalhes, criação, edição e exclusão) dos registros do model principal do seu sistema;
+- (1 ponto) 6. Implemente a autenticação do Django, criando as páginas de login e logout;
+- (1 ponto) 7. Implemente a autorização, de forma que apenas um usuário que possua uma determinada permissão possa realizar as operações de CRUD dos registros do model principal;
+- (1 ponto) 8. Coloque a aplicação em produção (deploy) no PythonAnywhere ou no Heroku (ou em
+- algum outro serviço de hospedagem que preferir).
 
 ## Requerimentos
 
