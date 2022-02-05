@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1 class="titulos">Página inicial</h1>
+
+    <h3 class="subtitulos">Dados Cadastrados:</h3>
+
+    <div class="divPagina">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Pacientes:</strong> {{ qtd_pacientes }}</li>
+            <li class="list-group-item"><strong>Motoristas:</strong> {{ qtd_motoristas }}</li>
+            <li class="list-group-item"><strong>Viagens:</strong> {{ qtd_viagens }}</li>
+            <li class="list-group-item"><strong>Viagens Concluidas:</strong> {{ estado_concluido }}</li>
+            <li class="list-group-item"><strong>Viagens Pendentes:</strong> {{ estado_pendente }}</li>
+            <li class="list-group-item"><strong>Viagens Atrasadas:</strong> {{ estado_atrasado }}</li>
+            <li class="list-group-item"><strong>Em Viagem:</strong> {{ estado_em_viagem }}</li>
+        </ul>
+    </div>
+    
+
+{% endblock %}
