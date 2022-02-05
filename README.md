@@ -14,7 +14,6 @@ Contendo os seguintes funcionamentos:
 ## Diagrama de classe
 
 ![diagram_de_classe](https://github.com/BPerdona/logistica-django/blob/main/Diagrama_Classes.png)
-<<<<<<< HEAD
 
 ## Objetivos para obtenção de nota
 
@@ -25,10 +24,7 @@ Contendo os seguintes funcionamentos:
 - (1 ponto) 5. Utilizando formulários, crie um CRUD (páginas de detalhes, criação, edição e exclusão) dos registros do model principal do seu sistema;
 - (1 ponto) 6. Implemente a autenticação do Django, criando as páginas de login e logout;
 - (1 ponto) 7. Implemente a autorização, de forma que apenas um usuário que possua uma determinada permissão possa realizar as operações de CRUD dos registros do model principal;
-- (1 ponto) 8. Coloque a aplicação em produção (deploy) no PythonAnywhere ou no Heroku (ou em
-- algum outro serviço de hospedagem que preferir).
-=======
->>>>>>> a4881a127d23477bf51598635305766c88ecf13d
+- (1 ponto) 8. Coloque a aplicação em produção (deploy) no PythonAnywhere ou no Heroku (ou em algum outro serviço de hospedagem que preferir).
 
 ## Requerimentos
 

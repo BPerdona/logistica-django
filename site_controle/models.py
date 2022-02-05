@@ -32,7 +32,8 @@ class Viagem(models.Model):
     ESTADO_VIAGEM = (
         ('C', 'Concluída'),
         ('P','Pendente'),
-        ('E','Em Viagem')
+        ('E','Em Viagem'),
+        ('A', 'Atrasado'),
     )
 
     estado = models.CharField(
