@@ -10,11 +10,14 @@ class Paciente(models.Model):
     telefone = models.CharField(max_length=20)
     local_espera = models.TextField(max_length=1000, help_text="Entre com uma breve descrição do local de espera.")
 
-    def get_absolut_url(self):
+    def get_absolute_url(self):
         return reverse('paciente-detalhe', args=[str(self.id)])
 
     def __str__(self):
         return self.nome
+
+    class Meta:
+        ordering=['nome']
 
 class Motorista(models.Model):
 
@@ -29,7 +32,7 @@ class Viagem(models.Model):
 
     data_viagem = models.DateField(null=True, blank=True)
     destino = models.CharField(max_length=200)
-    saida = models.CharField(max_length=6, help_text="HH:MM")
+    saida = models.CharField(max_length=6)
     paciente = models.ManyToManyField(Paciente, help_text="Selecione os pacientes que iram nessa viagem.")
     motorista = models.ForeignKey(Motorista, on_delete=models.SET_NULL, null=True)
 
@@ -51,5 +54,8 @@ class Viagem(models.Model):
     class Meta:
         ordering = ['data_viagem']
 
+    def get_absolute_url(self):
+        return reverse('viagem-detalhe', args=[str(self.id)])
+
     def __str__(self):
-        return self.data_viagem
+        return f'Viagem para {self.destino}| Dia: {self.data_viagem}| Saida: {self.saida}'

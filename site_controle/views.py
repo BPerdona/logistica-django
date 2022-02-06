@@ -1,3 +1,5 @@
+from ast import Del
+from dataclasses import field, fields
 from django.shortcuts import render
 from django.views import generic
 
@@ -35,4 +37,41 @@ class PacienteListaView(generic.ListView):
     model = Paciente
 
 class PacienteDetalheView(generic.DetailView):
+    
     model = Paciente
+
+class ViagemListaView(generic.ListView):
+
+    model = Viagem
+
+class ViagemDetalheView(generic.DetailView):
+
+    model = Viagem
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+class PacienteCreate(CreateView):
+    model = Paciente
+    fields = '__all__'
+
+class PacienteUpdate(UpdateView):
+    model = Paciente
+    fields = ['nome', 'data_nasc', 'rg', 'cns', 'telefone', 'local_espera']
+    
+
+class PacienteDelete(DeleteView):
+    model = Paciente
+    success_url =  reverse_lazy('pacientes')
+
+class ViagemCreate(CreateView):
+    model = Viagem
+    fields = '__all__'
+
+class ViagemUpdate(UpdateView):
+    model = Viagem
+    fields = ['data_viagem', 'destino', 'saida', 'paciente', 'motorista', 'estado']
+
+class ViagemDelete(DeleteView):
+    model = Viagem
+    success_url = reverse_lazy('viagens')

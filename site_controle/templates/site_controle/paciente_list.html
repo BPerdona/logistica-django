@@ -17,9 +17,9 @@
                 {% for paciente in paciente_list %}
                 <tr>
                   <th scope="row">{{ paciente.id }}</th>
-                  <td><a href="{{ paciente.get_absolut_url }}">{{ paciente.nome }}</a></td>
-                  <td><a href="{{ paciente.get_absolut_url }}">{{ paciente.rg}}</a></td>
-                  <td><a href="{{ paciente.get_absolut_url }}">{{ paciente.telefone}}</a></td>
+                  <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.nome }}</a></td>
+                  <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.rg}}</a></td>
+                  <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.telefone}}</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
