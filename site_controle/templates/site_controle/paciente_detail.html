@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1 class="titulos">Detalhes</h1>
+
+<div class="divPagina">
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Nome: </strong>{{ paciente.nome }}</li>
+        <li class="list-group-item"><strong>RG: </strong>{{ paciente.rg }}</li>
+        <li class="list-group-item"><strong>CNS: </strong> {{ paciente.cns }}</li>
+        <li class="list-group-item"><strong>Data de Nascimento: </strong> {{ paciente.resumo }}</li>
+        <li class="list-group-item"><strong>Telefone: </strong> {{ paciente.telefone }}</li>
+        <li class="list-group-item"><strong>Local de Espera: </strong>{{ paciente.local_espera }}</p></li>
+    </ul>
+</div>
+{% endblock %}

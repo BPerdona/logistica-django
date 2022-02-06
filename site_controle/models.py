@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Paciente(models.Model):
     
@@ -8,6 +9,9 @@ class Paciente(models.Model):
     cns = models.CharField(max_length=18)
     telefone = models.CharField(max_length=20)
     local_espera = models.TextField(max_length=1000, help_text="Entre com uma breve descrição do local de espera.")
+
+    def get_absolut_url(self):
+        return reverse('paciente-detalhe', args=[str(self.id)])
 
     def __str__(self):
         return self.nome

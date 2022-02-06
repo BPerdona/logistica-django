@@ -32,13 +32,13 @@
                 <ul class="list-unstyled components">
                     <p>Bem-vindo</p>
                     <li>
-                        <a href="">Tela Inicial</a>
+                        <a href="{% url 'index' %}">Tela Inicial</a>
                     </li>
                     <li>
                         <a href="">Cadastrar Paciente</a>
                     </li>
                     <li>
-                        <a href="">Consultar Paciente</a>
+                        <a href="{% url 'pacientes' %}">Consultar Paciente</a>
                     </li>
                     <li>
                         <a href="">Cadastrar Viagem</a>
@@ -55,10 +55,8 @@
                 {% block content %}
                     <!-- Conteudo que será preenchido com o html da pagina -->
                 {% endblock %}
-                
             </div>
         </div>
     </div>
-
 </body>
 </html>

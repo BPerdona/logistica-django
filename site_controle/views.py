@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from site_controle.models import Motorista, Paciente, Viagem
 
@@ -29,4 +30,9 @@ def index(request):
     #renderizando o template
     return render(request, 'index.html', context=conteudo)
 
+class PacienteListaView(generic.ListView):
+    
+    model = Paciente
 
+class PacienteDetalheView(generic.DetailView):
+    model = Paciente
