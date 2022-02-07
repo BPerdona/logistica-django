@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<h1>Apagar Paciente</h1>
+<h1 class="titulos">Apagar Paciente</h1>
 
 <p>Tem certeza que quer excluir esse ator: {{ paciente }}?</p>
 
 <form action="" method="POST">
   {% csrf_token %}
-  <input type="submit" value="Sim, excluir.">
+  <a class="btn btn-primary" href="{% url 'pacientes' %}" role="button" style="margin-right: 5%;">Voltar</a>
+  <input class="btn btn-danger" type="submit" value="Sim, excluir.">
 </form>
 
 {% endblock %}

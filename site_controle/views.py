@@ -2,6 +2,7 @@ from ast import Del
 from dataclasses import field, fields
 from django.shortcuts import render
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from site_controle.models import Motorista, Paciente, Viagem
 

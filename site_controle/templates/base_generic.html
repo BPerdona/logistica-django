@@ -22,7 +22,7 @@
 
     <div class="row">
         <div class="col-sm-2">
-
+            
             <!-- Menu de navegação padrão para todas as páginas -->
             {% block sidebar %}
             <nav id="sidebar">
@@ -30,7 +30,7 @@
                     <h3>Logística</h3>
                 </div>
                 <ul class="list-unstyled components">
-                    <p>Bem-vindo</p>
+                    <p>Bem-vindo: {{ user.get_username}}</p>
                     <li>
                         <a href="{% url 'index' %}">Tela Inicial</a>
                     </li>
@@ -46,6 +46,15 @@
                     <li>
                         <a href="{% url 'viagem-create' %}">Cadastrar Viagem</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}?next={{request.pah}}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </nav>
             {% endblock %}

@@ -30,3 +30,8 @@ urlpatterns += [
 urlpatterns += [
     path('site/', include('site_controle.urls'))
 ]
+
+# Adicionando a urlPatterns o login para entrar no sistema
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]
