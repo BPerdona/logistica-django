@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
     {% if viagem_list %}
         <h1 class="titulos">Lista de Viagens</h1>
         <table class="table">
@@ -27,5 +27,5 @@
     {% else %}
         <p>Não existem viagens cadastradas</p>
     {% endif %}
-
+{% endif %}
 {% endblock %}

@@ -2,30 +2,32 @@
 
 {% block content %}
 
-    {% if paciente_list %}
-        <h1 class="titulos">Lista de Pacientes</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Nome</th>
-                  <th scope="col">RG</th>
-                  <th scope="col">Telefone</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for paciente in paciente_list %}
-                <tr>
-                  <th scope="row">{{ paciente.id }}</th>
-                  <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.nome }}</a></td>
-                  <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.rg}}</a></td>
-                  <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.telefone}}</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-          </table>
-    {% else %}
-        <p>Não existem pacientes cadastrados</p>
-    {% endif %}
+    {% if user.is_authenticated %}
+      {% if paciente_list %}
+          <h1 class="titulos">Lista de Pacientes</h1>
+          <table class="table">
+              <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">RG</th>
+                    <th scope="col">Telefone</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for paciente in paciente_list %}
+                  <tr>
+                    <th scope="row">{{ paciente.id }}</th>
+                    <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.nome }}</a></td>
+                    <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.rg}}</a></td>
+                    <td><a href="{{ paciente.get_absolute_url }}">{{ paciente.telefone}}</a></td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+      {% else %}
+          <p>Não existem pacientes cadastrados</p>
+      {% endif %}
+    {% endif%}
 
 {% endblock %}

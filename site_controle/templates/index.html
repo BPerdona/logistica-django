@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
     <h1 class="titulos">Página inicial</h1>
 
     <h3 class="subtitulos">Dados Cadastrados:</h3>
@@ -18,5 +18,5 @@
         </ul>
     </div>
     
-
+{% endif %}
 {% endblock %}

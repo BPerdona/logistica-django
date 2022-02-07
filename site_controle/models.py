@@ -18,6 +18,7 @@ class Paciente(models.Model):
 
     class Meta:
         ordering=['nome']
+        permissions = (("pode_manipular_paciente", "Manipula o cadastro de pacientes."),("pode_criar_paciente", "Possibilita a criação de pacientes."),)
 
 class Motorista(models.Model):
 
@@ -53,6 +54,7 @@ class Viagem(models.Model):
 
     class Meta:
         ordering = ['data_viagem']
+        permissions = (("pode_manipular_viagem", "Manipula o cadastro de viagens."),("pode_criar_viagem", "Possibilita a criação de viagens."))
 
     def get_absolute_url(self):
         return reverse('viagem-detalhe', args=[str(self.id)])

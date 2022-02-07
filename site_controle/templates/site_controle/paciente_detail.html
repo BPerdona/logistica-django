@@ -1,22 +1,26 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<h1 class="titulos">Detalhes</h1>
+{% if user.is_authenticated %}
+    <h1 class="titulos">Detalhes</h1>
 
-<div class="botoes">
-    <a class="btn btn-primary" href="{% url 'pacientes' %}" role="button">Voltar</a>
-    <a class="btn btn-primary" href="{% url 'paciente-update' paciente.id %}" role="button">Editar</a>
-    <a class="btn btn-primary" href="{% url 'paciente-delete' paciente.id %}" role="button" style="background-color: red; border-color: white;">Excluir</a>
-</div>
+    <div class="botoes">
+        <a class="btn btn-primary" href="{% url 'pacientes' %}" role="button">Voltar</a>
+        {% if perms.site_controle.pode_manipular_paciente %}
+        <a class="btn btn-primary" href="{% url 'paciente-update' paciente.id %}" role="button">Editar</a>
+        <a class="btn btn-primary" href="{% url 'paciente-delete' paciente.id %}" role="button" style="background-color: red; border-color: white;">Excluir</a>
+        {% endif %}
+    </div>
 
-<div class="divPagina">
-    <ul class="list-group">
-        <li class="list-group-item"><strong>Nome: </strong>{{ paciente.nome }}</li>
-        <li class="list-group-item"><strong>RG: </strong>{{ paciente.rg }}</li>
-        <li class="list-group-item"><strong>CNS: </strong> {{ paciente.cns }}</li>
-        <li class="list-group-item"><strong>Data de Nascimento: </strong> {{ paciente.data_nasc }}</li>
-        <li class="list-group-item"><strong>Telefone: </strong> {{ paciente.telefone }}</li>
-        <li class="list-group-item"><strong>Local de Espera: </strong>{{ paciente.local_espera }}</p></li>
-    </ul>
-</div>
+    <div class="divPagina">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Nome: </strong>{{ paciente.nome }}</li>
+            <li class="list-group-item"><strong>RG: </strong>{{ paciente.rg }}</li>
+            <li class="list-group-item"><strong>CNS: </strong> {{ paciente.cns }}</li>
+            <li class="list-group-item"><strong>Data de Nascimento: </strong> {{ paciente.data_nasc }}</li>
+            <li class="list-group-item"><strong>Telefone: </strong> {{ paciente.telefone }}</li>
+            <li class="list-group-item"><strong>Local de Espera: </strong>{{ paciente.local_espera }}</p></li>
+        </ul>
+    </div>
+{% endif %}
 {% endblock %}

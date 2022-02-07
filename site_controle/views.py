@@ -2,8 +2,7 @@ from ast import Del
 from dataclasses import field, fields
 from django.shortcuts import render
 from django.views import generic
-from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from site_controle.models import Motorista, Paciente, Viagem
 
 def index(request):
@@ -52,27 +51,39 @@ class ViagemDetalheView(generic.DetailView):
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-class PacienteCreate(CreateView):
+class PacienteCreate(PermissionRequiredMixin, CreateView):
+
+    permission_required = 'site_controle.pode_manipular_paciente'
     model = Paciente
     fields = '__all__'
 
-class PacienteUpdate(UpdateView):
+class PacienteUpdate(PermissionRequiredMixin, UpdateView):
+
+    permission_required = 'site_controle.pode_manipular_paciente'
     model = Paciente
     fields = ['nome', 'data_nasc', 'rg', 'cns', 'telefone', 'local_espera']
-    
 
-class PacienteDelete(DeleteView):
+class PacienteDelete(PermissionRequiredMixin, DeleteView):
+
+    permission_required = 'site_controle.pode_manipular_paciente'
     model = Paciente
     success_url =  reverse_lazy('pacientes')
 
-class ViagemCreate(CreateView):
+
+class ViagemCreate(PermissionRequiredMixin, CreateView):
+
+    permission_required = 'site_controle.pode_manipular_viagem'
     model = Viagem
     fields = '__all__'
 
-class ViagemUpdate(UpdateView):
+class ViagemUpdate(PermissionRequiredMixin, UpdateView):
+
+    permission_required = 'site_controle.pode_manipular_viagem'
     model = Viagem
     fields = ['data_viagem', 'destino', 'saida', 'paciente', 'motorista', 'estado']
 
-class ViagemDelete(DeleteView):
+class ViagemDelete(PermissionRequiredMixin, DeleteView):
+
+    permission_required = 'site_controle.pode_manipular_viagem'
     model = Viagem
     success_url = reverse_lazy('viagens')

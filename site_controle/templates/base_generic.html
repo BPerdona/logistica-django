@@ -30,30 +30,36 @@
                     <h3>Logística</h3>
                 </div>
                 <ul class="list-unstyled components">
-                    <p>Bem-vindo: {{ user.get_username}}</p>
-                    <li>
-                        <a href="{% url 'index' %}">Tela Inicial</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'pacientes' %}">Consultar Paciente</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'viagens' %}">Consultar Viagem</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'paciente-create' %}">Cadastrar Paciente</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'viagem-create' %}">Cadastrar Viagem</a>
-                    </li>
                     {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
-                    </li>
+                        <p>Bem-vindo: {{ user.get_username}}</p>
+                        <li>
+                            <a href="{% url 'index' %}">Tela Inicial</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'pacientes' %}">Consultar Paciente</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'viagens' %}">Consultar Viagem</a>
+                        </li>
+                        {% if perms.site_controle.pode_criar_paciente %}
+                        <li>
+                            <a href="{% url 'paciente-create' %}">Cadastrar Paciente</a>
+                        </li>
+                        {% endif %}
+
+                        {% if perms.site_controle.pode_criar_viagem %}
+                        <li>
+                            <a href="{% url 'viagem-create' %}">Cadastrar Viagem</a>
+                        </li>
+                        {% endif %}
+                        
+                        <li>
+                            <a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
+                        </li>
                     {% else %}
-                    <li>
-                        <a href="{% url 'login' %}?next={{request.pah}}">Login</a>
-                    </li>
+                        <li>
+                            <a href="{% url 'login' %}?next={{request.pah}}">Login</a>
+                        </li>
                     {% endif %}
                 </ul>
             </nav>
