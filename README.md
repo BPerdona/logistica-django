@@ -6,8 +6,6 @@ Contendo os seguintes funcionamentos:
 
 - Cadastrar Pacientes;
 - Consultar Pacientes;
-- Cadastrar Motorista;
-- Consultar Motorista;
 - Cadastrar viagens;
 - Consultar Viagens.
 
