@@ -4,6 +4,7 @@
 {% if user.is_authenticated %}
     {% if viagem_list %}
         <h1 class="titulos">Lista de Viagens</h1>
+        <input class="form-control" id="myInput" type="text" placeholder="Search.." style="margin-bottom: 1%;">
         <table class="table">
             <thead>
                 <tr>
@@ -13,7 +14,7 @@
                   <th scope="col">Data</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
                 {% for viagem in viagem_list %}
                 <tr>
                   <th scope="row">{{ viagem.id }}</th>
@@ -28,4 +29,16 @@
         <p>Não existem viagens cadastradas</p>
     {% endif %}
 {% endif %}
+{% endblock %}
+{% block script %}
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
 {% endblock %}

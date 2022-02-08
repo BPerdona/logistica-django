@@ -11,22 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from .local_settings import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mm@n9p5sp(!_(9&3uv8nyh95&7jinxfz(j+=1rcyrob0kwb$tl'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['.pythonanywhere.com']
-
 
 # Application definition
 
@@ -69,21 +57,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'logistica.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DjangoLogistica$default',
-        'USER': 'DjangoLogistica',
-        'PASSWORD': 'Logistica@22',
-        'HOST': 'DjangoLogistica.mysql.pythonanywhere-services.com',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
